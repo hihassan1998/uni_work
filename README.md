@@ -1,2 +1,3 @@
-# interviewlosn
-Här kommer jag lägga till interviews frågon rörande react i en separat fil döpt ./react.js
+# Me-sidor
+Här kommer jag lägga till olika public dir från mina kurser
+
