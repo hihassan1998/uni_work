@@ -1,10 +1,11 @@
 <?php
 
 // Create a DSN for the user database using its filename
-$fileName = "../db/user.sqlite"; // Adjust as necessary
-if ($_SERVER["SERVER_NAME"] !== "www.student.bth.se") {
-    $fileName = "C:\db\user.sqlite";
-}
+// $fileName = "../db/user.sqlite"; // Adjust as necessary
+// if ($_SERVER["SERVER_NAME"] !== "www.student.bth.se") {
+//     $fileName = "C:\db\user.sqlite";
+// }
+$fileName = getenv('DB_PATH2') ?: __DIR__ . "/../db/user.sqlite";
 $dsn = "sqlite:$fileName";
 
 

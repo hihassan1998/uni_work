@@ -1,10 +1,12 @@
 <?php
 
 // Create a DSN for the database using its filename
-$fileName = "../db/db.sqlite";
-if ($_SERVER["SERVER_NAME"] !== "www.student.bth.se") {
-    $fileName = "C:\db\db.sqlite";
-}
+// $fileName = "../db/db.sqlite";
+// if ($_SERVER["SERVER_NAME"] !== "www.student.bth.se") {
+//     $fileName = "C:\db\db.sqlite";
+// }
+// DSN to publish on render
+$fileName = getenv('DB_PATH') ?: __DIR__ . "/../db/db.sqlite"; 
 
 $dsn = "sqlite:$fileName";
 // echo getcwd();
