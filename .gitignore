@@ -1,0 +1,40 @@
+# JSDoc generated folders
+out/
+docs/
+jsdoc/
+
+# Node.js dependencies
+node_modules/
+
+# Optional JSDoc config
+.jsdoc.json
+jsdoc.conf.json
+
+# Composer dependencies
+/vendor/
+
+# Logs and debug files
+*.log
+*.cache
+*.bak
+*.tmp
+
+# PHPStorm or other IDE files
+.idea/
+.vscode/
+nbproject/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# PHPUnit results
+/build/
+phpunit.xml
+phpunit.xml.dist
+/tests/_output/
+
+# Environment files
+.env
+.env.local
+.env.*.local
