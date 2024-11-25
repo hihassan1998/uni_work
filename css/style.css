@@ -1,0 +1,249 @@
+/** style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    background: #433f37;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.content {
+    flex-grow: 1;
+    text-align: left;
+    width: auto;
+    padding: 50px;
+    border: 4px solid #ccc;
+    background-color: #f2f2f2;
+    color: #333;
+    margin: 20px;
+    /* margin-left: auto; */
+    box-sizing: border-box;
+    /* overflow: auto */
+}
+
+@media (max-width: 768px) {
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.rounded {
+    border-radius: 50%;
+}
+
+.center {
+    margin: 0 auto;
+}
+
+.active {
+    background-color: #f9c710;
+    color: #000;
+}
+
+
+.smaller {
+    font-size: small;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.column2 {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+}
+
+p {
+    line-height: 1.2;
+    margin-bottom: 5px;
+}
+
+
+.centered_img {
+    display: block;
+    height: auto;
+    max-width: 420px;
+    min-width: 200px;
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto
+}
+
+h1,
+h2 {
+    font-family: Calibri, serif;
+    font-size: 2em;
+    color: #f9c710;
+    text-align: center
+}
+
+h1 {
+    margin: 1em;
+    color: #333
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    height: auto;
+    gap: 20px;
+    box-sizing: border-box;
+    padding-left: 15px;
+    padding-right: 15px
+}
+
+/** kmom02 styling starts */
+/* Container for the cards */
+.wrapper {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 300px;
+    }
+}
+
+/* Item card styling */
+.card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    /* width: 200px; */
+    width: auto;
+    text-align: center;
+}
+
+.card h2 {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+}
+
+.card p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* kmom02 styling ends */
+
+/** kmom03 styling starts */
+
+
+
+.btn {
+    margin: auto;
+    padding: 10px 20px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-weight: bolder;
+    /* gap: 150px; */   
+}
+#addShapeBtn {
+background-color: #433f37;
+}
+#resetBtn {
+    background-color: red;
+    color: white;
+}
+
+
+.shape {
+    width: 250px;
+    height: 200px;
+    border-radius: 5%;
+    cursor: pointer;
+    margin: 20px;
+}
+/* Every other text color change based on children odd/even*/
+.shape:nth-child(odd) p {
+    color: black;
+}
+.shape:nth-child(even) p {
+    color: white;
+}
+
+.info {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.info img {
+    max-width: 50px;
+}
+
+.rainbow-container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.shapesContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+/* kmom03 styling ends */
