@@ -1,14 +1,14 @@
 /**
- * Toggles the 'selected' class on the box element.
- * @param {HTMLElement} box - The box element to toggle.
+ * Bytar till 'selected' class på box element.
+ * @param {HTMLElement} box - Den box element som ska byta class.
  */
 function toggleSelected (box) {
   box.classList.toggle('selected')
 }
 
 /**
- * Shrinks and removes the box on double-click.
- * @param {HTMLElement} box - The box element to remove.
+ * Minimerar och tarbort boxen på double-click.
+ * @param {HTMLElement} box - Den box element som ska tas bort.
  */
 function handleDoubleClick (box) {
   box.style.width = '2px'
