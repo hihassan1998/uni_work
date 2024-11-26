@@ -20,7 +20,8 @@ body {
 .center {
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    /* right: 50%; */
+    /* transform: translate(-50%, -50%); */
 }
 
 .size200 {
@@ -28,10 +29,17 @@ body {
     height: 200px;
 }
 
+/* 
 .box:hover {
     border: 3px solid black;
-}
+} */
 
+.selected {
+    border: 3px solid black;
+}
+.selected2 {
+    outline: 3px dashed black;
+  }
 
 /* navbar styling starts here*/
 
