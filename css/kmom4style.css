@@ -29,6 +29,12 @@ body {
     height: 200px;
 }
 
+.circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
 /* 
 .box:hover {
     border: 3px solid black;
