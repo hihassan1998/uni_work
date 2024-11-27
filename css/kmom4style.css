@@ -14,6 +14,9 @@ body {
 
 .box {
     position: absolute;
+}
+
+.red {
     background-color: red;
 }
 
@@ -30,8 +33,8 @@ body {
 }
 
 .circle {
-    width: 200px;
-    height: 200px;
+    /* width: 200px;
+    height: 200px; */
     border-radius: 50%;
 }
 
@@ -41,11 +44,12 @@ body {
 } */
 
 .selected {
-    border: 3px solid black;
+    outline: 3px solid black;
 }
-.selected2 {
-    outline: 3px dashed black;
-  }
+
+.animateSize {
+    transition: width 1s, height 1s;
+}
 
 /* navbar styling starts here*/
 

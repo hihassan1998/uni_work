@@ -1,4 +1,12 @@
 /**
+ * En funktion som posstionerar valda boxar och ser till att de stannar inom viewport.
+ * Pil-tangenten: 'up-ner-höger-vänster'.
+ * @function
+ * @memberof module:kmom04
+ * @param {HTMLElement} box - Den box element som ska flyttas.
+ */
+
+/**
  * Centerar boxen i mitten av skärm.
  * @param {HTMLElement} box - Box ellement som ska centereras.
  */

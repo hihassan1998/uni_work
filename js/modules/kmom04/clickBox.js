@@ -1,8 +1,12 @@
 /**
+ * En module till kmom04 med funktioner som hanterar mustryck på elemten 'box'.
+ * @memberof module:kmom04
+ */
+/**
  * Bytar till 'selected' class på box element.
  * @param {HTMLElement} box - Den box element som ska byta class.
  */
-function toggleSelected (box) {
+function handleClickSelect (box) {
   box.classList.toggle('selected')
 }
 
@@ -17,6 +21,6 @@ function handleDoubleClick (box) {
 }
 
 export {
-  toggleSelected,
+  handleClickSelect,
   handleDoubleClick
 }
