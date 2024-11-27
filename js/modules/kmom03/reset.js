@@ -1,7 +1,7 @@
 /**
  * En function som sätter om form container, gömmer återställningsknapp, sätter användaren kan början på nytt.
  * @function
- * @memberof module:kmom03
+ * @module kmom03/reset
  * @param {HTMLElement} container - Container elementen där formen visas.
  * @param {HTMLElement} button - Button element som adderar ny form i ordning.
  * @param {HTMLElement} resetBtn - Återställningsknapp element som återställer spelet.

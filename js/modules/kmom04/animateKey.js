@@ -1,4 +1,8 @@
-import { changeColor, dublicateSelected, resizeBox, deleteSelectedBox, deselectAllBoxes, selectAllBoxes } from './animateBox.js'
+/**
+ * En module till kmom04 med event hanterare som hanterar animation via tangentbordknapps-tryck, för elemeten 'box' .
+ * @module kmom04/animateKey
+ */
+import { changeShape, changeColor, duplicateSelected, resizeBox, deleteSelectedBox, deselectAllBoxes, selectAllBoxes, dublicateBox1 } from './animateBox.js'
 import { moveElement } from './moveBox.js'
 /**
  * Tillhandhåller keyboard events för att manipulera boxen.
@@ -7,55 +11,64 @@ import { moveElement } from './moveBox.js'
  */
 function handleKeyEvents (event, box) {
   const key = event.key
-  const selectedElements = document.querySelectorAll('.selected')
   const step = 10
 
   switch (key) {
+    // 3. Keyboardevents:
+    // 3.1 Tangenten e
     case 'e':
-      selectedElements.forEach(el => el.classList.toggle('circle'))
-      console.log('Toggle circle-klass för markerade boxar.')
-      // box.classList.toggle('circle')
+      changeShape()
       break
-      // klart för denna val
+    // 3.2 Tangenterna q, w
+    case 'q':
+      resizeBox(10)
+      break
+    case 'w':
+      resizeBox(-10)
+      break
+    // 3.3 Tangenterna r
     case 'r':
       changeColor(box)
       break
-    case 'q':
-      resizeBox(box, 10)
-      break
-    case 'w':
-      resizeBox(box, -10)
-      break
+    // 3.4 Tangenten t
     case 't':
-      dublicateSelected(box)
-      break // Behöver fixa viewport fitting problem!!!
-
-      // Här börjar val för piltangenten
-    case 'ArrowLeft': // Move left
-      selectedElements.forEach((element) => moveElement(element, -step, 0))
+      duplicateSelected()
       break
-    case 'ArrowRight': // Move right
-      selectedElements.forEach((element) => moveElement(element, step, 0))
-      break
-    case 'ArrowUp': // Move up
-      selectedElements.forEach((element) => moveElement(element, 0, -step))
-      break
-    case 'ArrowDown': // Move down
-      selectedElements.forEach((element) => moveElement(element, 0, step))
-      break
-      // Här avslutar val för piltangenten
-
+      // {Behöver fixa viewport fitting problem!!!}
+    // 3.5 Tangenten y
     case 'y':
       deleteSelectedBox()
       break
-
+      // 3.6 Tangenten u
     case 'u':
       deselectAllBoxes()
       break
+      // 3.7 Tangenten i
 
     case 'i':
       selectAllBoxes()
       break
+      // 3.8 Tangenten p
+
+    case 'p':
+      dublicateBox1()
+      break
+
+    // 3.9 Piltangenterna
+    // Här börjar val för piltangenten
+    case 'ArrowLeft':
+      moveElement(box, -step, 0)
+      break
+    case 'ArrowRight':
+      moveElement(box, step, 0)
+      break
+    case 'ArrowUp':
+      moveElement(box, 0, -step)
+      break
+    case 'ArrowDown':
+      moveElement(box, 0, step)
+      break
+      // Här avslutar val för piltangenten
 
     default:
       break

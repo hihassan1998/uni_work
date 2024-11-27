@@ -1,6 +1,7 @@
 /**
  * Modul för att visa form i ording med text inhämtat från arrayer från info.js.
- * @module kmom03
+ * @namespace kmom03
+ * @property {module:kmom03/reset} reset Sätter tillbaka ordning och reda.
  */
 
 import { colors, persons, years } from './modules/kmom03/info.js'

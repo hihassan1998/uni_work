@@ -1,6 +1,11 @@
 /**
- * Modul för att visa form i ording med text inhämtat från arrayer från info.js.
- * @module kmom03
+ *  Module för hantering av elementinteraktioner och positionering i viewporten samt övriga krav från kmom04.
+ * @namespace kmom04
+ * @property {module:kmom04/boxPossition} boxPossition Hanterar positionering av element i viewporten.
+ * @property {module:kmom04/clickBox} clickBox   Hanterar interaktioner med element vid klick.
+ * @property {module:kmom04/animateKey} animateKey Hanterar animationer som triggas av tangentbordshändelser.
+ * @property {module:kmom04/animateBox} animateBox Animerar element för specifika interaktioner.
+ * @property {module:kmom04/moveBox} moveBox Flyttar element inom viewporten och ser till att de stannar inom gränserna.
  */
 
 import { centerBox, handleResize } from './modules/kmom04/boxPossition.js'
@@ -17,9 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   box.addEventListener('click', () => handleClickSelect(box))
 
-  box.addEventListener('dblclick', () => handleDoubleClick(box))
-
+  document.addEventListener('dblclick', (event) => {
+    if (event.target.classList.contains('box')) {
+      handleDoubleClick(event.target)
+    }
+  })
   document.addEventListener('keydown', (event) => handleKeyEvents(event, box))
 
-  Element.addEventListener('move', () => moveElement(box))
+  box.addEventListener('move', () => moveElement(box))
 })

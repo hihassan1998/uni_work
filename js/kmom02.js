@@ -1,6 +1,7 @@
 /**
  * Modul för att visa slumpmässiga djur från varje kontinent och en hälsning baserad på tid på dagen.
- * @module kmom02
+ * @namespace kmom02
+ * @property {module:kmom02/greeting} greeting Skriver ut hälsning.
  */
 import { africanAnimals, americanAnimals, europeanAnimals } from './modules/kmom02/animals.js'
 import { getGreeting } from './modules/kmom02/greeting.js'

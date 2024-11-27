@@ -1,5 +1,6 @@
 /**
  * En funktion som returnerar "God förmiddag" eller "God eftermiddag" beroende på om klockan är före eller efter 12.00.
+ * @module kmom02/greeting
  * @returns {string} "God förmiddag" om innan 12:00, annars "God eftermiddag".
  */
 function getGreeting () {

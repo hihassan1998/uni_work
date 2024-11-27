@@ -1,24 +1,46 @@
 /**
- * En funktion som flyttar valda boxar och ser till att de stannar inom viewport.
+ * Module som flyttar valda boxar och ser till att de stannar inom viewport.
  * Pil-tangenten: 'up-ner-höger-vänster'.
- * @function
- * @memberof module:kmom04
+ * @module kmom04/moveBox
+ */
+
+/**
+ * Flyttar valda boxar och ser till att de stannar inom viewport.
+ * Pil-tangenten: 'up-ner-höger-vänster'.
  * @param {HTMLElement} element - Den box element som ska flyttas.
- * @param {HTMLElement} dx -xxxxxxxxxxxxxxxxxxxxxxxxxxxx.
- * @param {HTMLElement} dy -xxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+ * @param {HTMLElement} dx -Förändring vid x-axis.
+ * @param {HTMLElement} dy -Förändring vis y-axis.
  */
 function moveElement (element, dx, dy) {
-  const currentLeft = parseInt(element.style.left) || 0
-  const currentTop = parseInt(element.style.top) || 0
+  const selectedElements = document.querySelectorAll('.selected')
 
-  const newLeft = Math.max(0, currentLeft + dx) // Prevent going out of bounds
-  const newTop = Math.max(0, currentTop + dy)
+  for (let i = 0; i < selectedElements.length; i++) {
+    const element = selectedElements[i]
+    const currentLeft = parseInt(element.style.left) || 0
+    const currentTop = parseInt(element.style.top) || 0
 
-  const maxWidth = window.innerWidth - element.offsetWidth
-  const maxHeight = window.innerHeight - element.offsetHeight
+    const newLeft = Math.max(0, currentLeft + dx)
+    const newTop = Math.max(0, currentTop + dy)
 
-  element.style.left = `${Math.min(newLeft, maxWidth)}px`
-  element.style.top = `${Math.min(newTop, maxHeight)}px`
+    const { maxWidth, maxHeight } = getMaxDimensions(element)
+
+    element.style.left = `${Math.min(newLeft, maxWidth)}px`
+    element.style.top = `${Math.min(newTop, maxHeight)}px`
+  }
+}
+/**
+ * Beräknar max-width och max-height för att hålla ett element inom viewporten.
+ * @param {HTMLElement} element - Elementet som ska positioneras.
+ * @returns {object} - Objekten med maxWidth och maxHeight.
+ */
+function getMaxDimensions (element) {
+  const elementWidth = element.offsetWidth
+  const elementHeight = element.offsetHeight
+
+  const maxWidth = window.innerWidth - elementWidth
+  const maxHeight = window.innerHeight - elementHeight
+
+  return { maxWidth, maxHeight }
 }
 
-export { moveElement }
+export { moveElement, getMaxDimensions }
