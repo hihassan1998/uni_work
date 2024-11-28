@@ -2,7 +2,7 @@
  * En module till kmom04 med event hanterare som hanterar animation via tangentbordknapps-tryck, för elemeten 'box' .
  * @module kmom04/animateKey
  */
-import { changeShape, changeColor, duplicateSelected, resizeBox, deleteSelectedBox, deselectAllBoxes, selectAllBoxes, dublicateBox1 } from './animateBox.js'
+import { changeShape, changeBackground, changeColor, duplicateSelected, resizeBox, deleteSelectedBox, deselectAllBoxes, selectAllBoxes, dublicateBox1 } from './animateBox.js'
 import { moveElement } from './moveBox.js'
 /**
  * Tillhandhåller keyboard events för att manipulera boxen.
@@ -69,7 +69,9 @@ function handleKeyEvents (event, box) {
       moveElement(box, 0, step)
       break
       // Här avslutar val för piltangenten
-
+    case 'b':
+      changeBackground()
+      break
     default:
       break
   }

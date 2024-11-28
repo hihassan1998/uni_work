@@ -19,9 +19,9 @@ function centerBox (box) {
   box.style.left = `${left}px`
   box.style.top = `${top}px`
 
-  console.log(
-    `Centering box: windowWidth=${windowWidth}, windowHeight=${windowHeight}, boxWidth=${boxWidth}, boxHeight=${boxHeight}, left=${left}, top=${top}`
-  )
+  // console.log(
+  //   `Centering box: windowWidth=${windowWidth}, windowHeight=${windowHeight}, boxWidth=${boxWidth}, boxHeight=${boxHeight}, left=${left}, top=${top}`
+  // )
 }
 
 /**

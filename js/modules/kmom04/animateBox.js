@@ -3,6 +3,9 @@
  * @module kmom04/animateBox
  */
 import { getMaxDimensions } from './moveBox.js'
+const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
+const colors2 = ['pink', 'cyan', 'lime', 'teal', 'purple', 'magenta', 'brown', 'gray', 'beige', 'peach']
+
 /**
  * Växla formen på alla valda elementen från box till cirkulär.
  */
@@ -19,7 +22,7 @@ function changeShape () {
  */
 function changeColor () {
   const selectedElements = document.getElementsByClassName('selected')
-  const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
+  // const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
 
   for (let i = 0; i < selectedElements.length; i++) {
     const box = selectedElements[i]
@@ -107,7 +110,6 @@ function deleteSelectedBox () {
  * @param {HTMLElement} element - Elementet som ska randomiseras.
  */
 function randomColorAndForm (element) {
-  const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
   const randomColor = colors[Math.floor(Math.random() * colors.length)]
   element.style.backgroundColor = randomColor
 
@@ -117,6 +119,14 @@ function randomColorAndForm (element) {
   } else {
     element.classList.remove('circle')
   }
+}
+/**
+ * Funktion som ändrar bakgrundsfärgen på body när 'space' trycks.
+ * Tangent: "Space".
+ */
+function changeBackground () {
+  document.body.style.backgroundColor = colors2[Math.floor(Math.random() * colors2.length)]
+  console.log('Bakgrundsfärg ändrad med "b"-tangenttryck.')
 }
 
 /**
@@ -163,5 +173,6 @@ export {
   resizeBox,
   selectAllBoxes,
   deleteSelectedBox,
-  deselectAllBoxes
+  deselectAllBoxes,
+  changeBackground
 }

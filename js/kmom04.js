@@ -14,6 +14,7 @@ import { handleKeyEvents } from './modules/kmom04/animateKey.js'
 import { moveElement } from './modules/kmom04/moveBox.js'
 
 document.addEventListener('DOMContentLoaded', () => {
+  console.log('4. Gör en egen händelse:\nEventlyssnare till "b" tangentbordsknapp aktiverat. \n tryck "tangent-b för att ändra bakgrundsfärg."')
   const box = document.getElementById('box1')
 
   centerBox(box)
