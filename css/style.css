@@ -189,7 +189,6 @@ h1 {
 /** kmom03 styling starts */
 
 
-
 .btn {
     margin: auto;
     padding: 10px 20px;
@@ -199,11 +198,13 @@ h1 {
     border: 1px solid black;
     border-radius: 5px;
     font-weight: bolder;
-    /* gap: 150px; */   
+    /* gap: 150px; */
 }
+
 #addShapeBtn {
-background-color: #433f37;
+    background-color: #433f37;
 }
+
 #resetBtn {
     background-color: red;
     color: white;
@@ -217,10 +218,12 @@ background-color: #433f37;
     cursor: pointer;
     margin: 20px;
 }
+
 /* Every other text color change based on children odd/even*/
 .shape:nth-child(odd) p {
     color: black;
 }
+
 .shape:nth-child(even) p {
     color: white;
 }
@@ -241,9 +244,38 @@ background-color: #433f37;
     justify-content: space-around;
     align-items: center;
 }
-.shapesContainer{
+
+.shapesContainer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
+
 /* kmom03 styling ends */
+
+
+
+/** kmom05 styling starts */
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+#highscore-list {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* kmom05 styling ends */

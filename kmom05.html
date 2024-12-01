@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="sv">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CO2 Emission</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/hh_logo_b.png">
+
+</head>
+
+<body>
+    <header>
+        <ul>
+            <li><a href="index.html">Me</a></li>
+            <li><a href="redovisning.html">Redovisning</a></li>
+            <li><a href="om.html">Om</a></li>
+            <li><a href="kmom02.html">kmom02</a></li>
+            <li><a href="kmom03.html">kmom03</a></li>
+            <li><a href="kmom04.html">kmom04</a></li>
+            <li><a href="kmom05.html" class="active">kmom05</a></li>
+        </ul>
+    </header>
+    <main class="content">
+
+
+
+        <h1>CO₂ Emission Comparison</h1>
+        <select id="year-select">
+            <option value="">Select Year</option>
+        </select>
+        <button id="fetch-data">Fetch Data</button>
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Country</th>
+                    <th>CO₂ Emission (Million Tons)</th>
+                    <th>Population (Million)</th>
+                    <th>Per Capita Emission (Tons)</th>
+                    <th>Total Emission (Million Tons)</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div id="highscore-list"></div>
+        <button id="clear-storage">Clear Highscore</button>
+
+
+
+    </main>
+</body>
+
+<script type="module" src="js/kmom05.js" ></script>
+</html>
