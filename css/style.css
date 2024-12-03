@@ -278,4 +278,12 @@ td {
     font-size: 18px;
 }
 
+.winner {
+    background-color: #d4edda;
+    font-weight: bold;
+}
+tr {
+    transition: background-color 0.3s;
+}
+
 /* kmom05 styling ends */

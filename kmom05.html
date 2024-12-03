@@ -24,33 +24,62 @@
     </header>
     <main class="content">
 
+        <div style="display: flex; flex-direction: column;">
 
 
-        <h1>CO₂ Emission Comparison</h1>
-        <select id="year-select">
-            <option value="">Select Year</option>
-        </select>
-        <button id="fetch-data">Fetch Data</button>
-        <table id="data-table">
-            <thead>
-                <tr>
-                    <th>Year</th>
-                    <th>Country</th>
-                    <th>CO₂ Emission (Million Tons)</th>
-                    <th>Population (Million)</th>
-                    <th>Per Capita Emission (Tons)</th>
-                    <th>Total Emission (Million Tons)</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-        <div id="highscore-list"></div>
-        <button id="clear-storage">Clear Highscore</button>
+            <h2>CO₂ Emission Comparison</h2>
+            <div style="display: flex; flex-direction: column; gap: 5px; justify-content: space-around; margin-top: 20px; align-items: center;">
+
+                <select id="year-select">
+                    <option value="">Select Year</option>
+                </select>
+                <button id="fetch-data">Fetch Data</button>
+            </div>
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>Country</th>
+                        <th>Year</th>
+                        <th>CO₂ Emission (Million Tons)</th>
+                        <th> CO₂ Per Capita Emission (Tons)</th>
+                        <th>Coal-C02 Emission (Million Tons)</th>
+                        <th>Population (Million)</th>
+
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <!-- <br>
+        <h2>Highscore</h2>
+        <div id="highscore-list"></div>         -->
+
+        <div style="display: flex; flex-direction: column;">
+
+            <h2 class="">Highscore</h2>
+            <table id="highscore-list">
+                <thead>
+                    <tr>
+                        <th>Country</th>
+                        <th>Wins</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+        </div>
+
+        <div style="display: flex; flex-direction: row; gap: 5px; justify-content: space-around; margin-top: 20px;">
+
+            <button id="clear-storage">Clear Highscore</button>
+            <button id="clear-session">Clear SessionStorage</button>
+        </div>
 
 
 
     </main>
+    <script type="module" src="js/kmom05.js"></script>
 </body>
 
-<script type="module" src="js/kmom05.js" ></script>
 </html>
