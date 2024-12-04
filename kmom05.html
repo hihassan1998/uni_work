@@ -24,17 +24,15 @@
     </header>
     <main class="content">
 
-        <div style="display: flex; flex-direction: column;">
+        <h2>CO₂ Emission Comparison</h2>
+        <div class="btn-cont">
+            <select id="year-select">
+                <option value="">Select Year</option>
+            </select>
+            <button class="btn-5" id="fetch-data">Fetch Data</button>
+        </div>
 
-
-            <h2>CO₂ Emission Comparison</h2>
-            <div style="display: flex; flex-direction: column; gap: 5px; justify-content: space-around; margin-top: 20px; align-items: center;">
-
-                <select id="year-select">
-                    <option value="">Select Year</option>
-                </select>
-                <button id="fetch-data">Fetch Data</button>
-            </div>
+        <div class="table-container">
             <table id="data-table">
                 <thead>
                     <tr>
@@ -44,20 +42,13 @@
                         <th> CO₂ Per Capita Emission (Tons)</th>
                         <th>Coal-C02 Emission (Million Tons)</th>
                         <th>Population (Million)</th>
-
                     </tr>
                 </thead>
                 <tbody></tbody>
             </table>
         </div>
-
-        <!-- <br>
-        <h2>Highscore</h2>
-        <div id="highscore-list"></div>         -->
-
-        <div style="display: flex; flex-direction: column;">
-
-            <h2 class="">Highscore</h2>
+        <div class="highscore-cont">
+            <h2>Highscore</h2>
             <table id="highscore-list">
                 <thead>
                     <tr>
@@ -67,13 +58,10 @@
                 </thead>
                 <tbody></tbody>
             </table>
-
         </div>
-
-        <div style="display: flex; flex-direction: row; gap: 5px; justify-content: space-around; margin-top: 20px;">
-
-            <button id="clear-storage">Clear Highscore</button>
-            <button id="clear-session">Clear SessionStorage</button>
+        <div class="btn-cont-2">
+            <button class="btn-5" id="clear-storage">Clear Highscore</button>
+            <button class="btn-5" id="clear-session">Clear SessionStorage</button>
         </div>
 
 

@@ -17,7 +17,7 @@ body {
     flex-grow: 1;
     text-align: left;
     width: auto;
-    padding: 50px;
+    padding: 25px;
     border: 4px solid #ccc;
     background-color: #f2f2f2;
     color: #333;
@@ -184,10 +184,7 @@ h1 {
     color: #555;
 }
 
-
-
 /** kmom03 styling starts */
-
 
 .btn {
     margin: auto;
@@ -256,34 +253,82 @@ h1 {
 
 
 /** kmom05 styling starts */
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+        font-size: 0.8em;
+    }
 
+}
 
+.table-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow-x: auto;
+}
 
 table {
-    width: 100%;
+    width: 80%;
     border-collapse: collapse;
     margin-top: 20px;
+    background-color: #fff39aae;
+    table-layout: auto;
+    border: 3px solid black;
+    margin-bottom: 20px;
 }
 
 th,
 td {
-    border: 1px solid #ccc;
+    border: 2px solid black;
     padding: 10px;
     text-align: center;
 }
 
-#highscore-list {
-    margin-top: 20px;
-    text-align: center;
-    font-size: 18px;
-}
 
-.winner {
-    background-color: #d4edda;
-    font-weight: bold;
-}
 tr {
     transition: background-color 0.3s;
+}
+
+
+.winner {
+    background-color: #7cfa99;
+    font-weight: bold;
+}
+
+.btn-cont {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.highscore-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+
+.btn-cont-2 {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: space-around;
+    padding-top: 10px;
+}
+
+.btn-5 {
+    background-color: #333;
+    padding: 5px 10px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-weight: bolder;
 }
 
 /* kmom05 styling ends */
