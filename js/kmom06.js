@@ -1,6 +1,13 @@
+/**
+ * Huvudskript för Hangman-spelet.
+ * - Hanterar spelets logik och uppdaterar UI.
+ * - Använder moduler för att visa och uppdatera hangman samt hantera ordlistan.
+ * @namespace kmom06
+ * @property {module:kmom06/hangman} hangman Hanterar logiken för att visa hangman.
+ * @property {module:kmom06/manageWords} manageWords Tillhandahåller funktionalitet för att hantera ordlistan.
+ */
 import { hangman } from './modules/kmom06/hangman.js'
 import { wordManager } from './modules/kmom06/manageWords.js'
-
 
 (async () => {
   const lettersDiv = document.getElementById('letters')
@@ -11,40 +18,47 @@ import { wordManager } from './modules/kmom06/manageWords.js'
   let guessedLetters = []
   let wrongGuesses = 0
 
-  // List of hangman parts (uses the existing hangman.js code)
   const hangmanParts = hangman.validParts
 
   /**
-   * Initialize the game logic.
+   * Startar spelet och sätter upp nödvändig logik och visning.
+   * @async
+   * @function
+   * @returns {Promise<void>} Initierar spelet.
    */
-  async function initGame () {
+  async function startGame () {
     word = await wordManager.getRandomWord()
-    console.log('The correct word is:', word);
+    // console.log('The correct word:', word)
     guessedLetters = []
     wrongGuesses = 0
-    resetHangman()
+    resetHangmanDisplay()
     displayWord()
-    setupLetterButtons()
+    createLetterButtons()
     gameMessage.textContent = ''
   }
 
   /**
-   * Reset the hangman display to its initial state.
+   * Återställer hangman till dess initialt tillstånd.
    */
-  function resetHangman() {
-    hangmanParts.forEach(part => hangman.hide(part))
+  function resetHangmanDisplay () {
+    for (let i = 0; i < hangmanParts.length; i++) {
+      hangman.hide(hangmanParts[i])
+    }
   }
 
   /**
-   * Display the word with underscores for unguessed letters and the actual letters for guessed ones.
+   * Visar ordet med streck för obokstaverade bokstäver och rätt gissade bokstäver.
    */
   function displayWord () {
-    const displayed = word.split('').map(letter =>
-      guessedLetters.includes(letter) ? letter : '_'
-    ).join(' ')
+    let displayed = ''
+    for (let i = 0; i < word.length; i++) {
+      displayed += guessedLetters.includes(word[i]) ? word[i] : '_'
+      if (i < word.length - 1) {
+        displayed += ' '
+      }
+    }
     wordDisplay.textContent = displayed
 
-    // Check if the player has won
     if (!displayed.includes('_')) {
       gameMessage.textContent = '🎉 You Won The Game!  🎉'
       disableButtons()
@@ -52,11 +66,11 @@ import { wordManager } from './modules/kmom06/manageWords.js'
   }
 
   /**
-   * Set up the letter buttons for the game.
+   * Ställer in knapparna för bokstäver i spelet.
    */
-  function setupLetterButtons() {
+  function createLetterButtons () {
     lettersDiv.innerHTML = ''
-    for (let i = 65; i <= 90; i++) { // A-Z
+    for (let i = 65; i <= 90; i++) {
       const letter = String.fromCharCode(i)
       const button = document.createElement('button')
       button.textContent = letter
@@ -66,9 +80,9 @@ import { wordManager } from './modules/kmom06/manageWords.js'
   }
 
   /**
-   * Handle a letter guess. Update the game based on whether the guess is correct.
-   * @param {string} letter - The letter the player guessed.
-   * @param {HTMLButtonElement} button - The button that was clicked.
+   * Hanterar gissning av en bokstav och uppdaterar spelet baserat på resultatet.
+   * @param {string} letter - Bokstaven som gissats.
+   * @param {HTMLButtonElement} button - Knappen som klickades på.
    */
   function handleGuess (letter, button) {
     console.log('Guessing letter:', letter)
@@ -79,7 +93,7 @@ import { wordManager } from './modules/kmom06/manageWords.js'
       displayWord()
     } else {
       wrongGuesses++
-      showNextHangmanPart()
+      showNextPart()
       if (wrongGuesses === hangmanParts.length) {
         gameMessage.textContent = '💀 Game Over!'
         disableButtons()
@@ -90,41 +104,40 @@ import { wordManager } from './modules/kmom06/manageWords.js'
   }
 
   /**
-   * Show the next part of the hangman based on wrong guesses.
+   * Visar nästa del av hangman baserat på antalet felaktiga gissningar.
    */
-  function showNextHangmanPart () {
+  function showNextPart () {
     if (wrongGuesses <= hangmanParts.length) {
       hangman.show(hangmanParts[wrongGuesses - 1])
     }
   }
 
   /**
-   * Disable all letter buttons once the game is over.
+   * Inaktiverar alla knappar för bokstäver när spelet är slut.
    */
   function disableButtons () {
-    document.querySelectorAll('#letters button').forEach(button => {
-      button.disabled = true
-    })
+    const buttons = document.querySelectorAll('#letters button')
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].disabled = true
+    }
   }
 
-  // Peek the word (for debugging purposes)
+  /**
+   * Visar det aktuella ordet i konsolen.
+   */
   window.peek = () => {
     console.log('Active word:', word)
   }
+
   /**
-   * Refreshes the current page.
-   *
-   * This function reloads the page when called, effectively restarting the game or
-   * resetting the game state. It is used when the user clicks the "Play Again" button.
+   * Uppdaterar sidan för att starta spelet på nytt.
    * @function
    */
   function refreshPage () {
     location.reload() // This reloads the page
   }
 
-  // Add event listener to the button to trigger the refreshPage function when clicked
   document.getElementById('refreshButton').addEventListener('click', refreshPage)
 
-  // Start the game
-  await initGame()
+  await startGame()
 })()

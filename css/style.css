@@ -422,16 +422,20 @@ button:hover{
         align-items: center;
     }
 
-    h1,
+    h1{
+        word-break: break-word;
+
+    }
     h2 {
-        word-break: break-all;
+        font-size: 2rem;
+        word-break: break-word;
     }
 
     .game-title {
         font-family: fantasy;
-        font-size: 3rem;
+        font-size: 2rem;
         text-shadow: 5px 5px black;
-        word-break: break-all;
+        word-break: break-word;
     }
 }
 
