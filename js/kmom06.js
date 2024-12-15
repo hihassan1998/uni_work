@@ -1,6 +1,7 @@
 import { hangman } from './modules/kmom06/hangman.js'
 import { wordManager } from './modules/kmom06/manageWords.js'
 
+
 (async () => {
   const lettersDiv = document.getElementById('letters')
   const wordDisplay = document.getElementById('word-display')
@@ -16,7 +17,7 @@ import { wordManager } from './modules/kmom06/manageWords.js'
   /**
    * Initialize the game logic.
    */
-  async function initGame() {
+  async function initGame () {
     word = await wordManager.getRandomWord()
     console.log('The correct word is:', word);
     guessedLetters = []
@@ -110,6 +111,19 @@ import { wordManager } from './modules/kmom06/manageWords.js'
   window.peek = () => {
     console.log('Active word:', word)
   }
+  /**
+   * Refreshes the current page.
+   *
+   * This function reloads the page when called, effectively restarting the game or
+   * resetting the game state. It is used when the user clicks the "Play Again" button.
+   * @function
+   */
+  function refreshPage () {
+    location.reload() // This reloads the page
+  }
+
+  // Add event listener to the button to trigger the refreshPage function when clicked
+  document.getElementById('refreshButton').addEventListener('click', refreshPage)
 
   // Start the game
   await initGame()
