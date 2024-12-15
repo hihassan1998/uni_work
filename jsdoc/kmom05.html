@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Namespace: kmom03</title>
+    <title>JSDoc: Namespace: kmom05</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Namespace: kmom03</h1>
+    <h1 class="page-title">Namespace: kmom05</h1>
 
     
 
@@ -28,7 +28,7 @@
 
 <header>
     
-        <h2>kmom03</h2>
+        <h2>kmom05</h2>
         
     
 </header>
@@ -37,7 +37,12 @@
     <div class="container-overview">
     
         
-            <div class="description">Modul för att visa form i ording med text inhämtat från arrayer från info.js.</div>
+            <div class="description">Huvudskript för att hantera jämförelse av CO₂-utsläppsdata.
+- Hämtar och visar CO₂-utsläppsdata för Sverige, Danmark och Norge från 1900 till 2019.
+- Låter användare välja ett år och visa motsvarande data i en tabell.
+- Markerar landet med lägst CO₂-utsläpp, CO₂ per capita och kolrelaterade CO₂-utsläpp.
+- Håller en topplista över länder med flest "vinster" med hjälp av sessionStorage.
+- Erbjuder funktion för att rensa topplistan.</div>
         
 
         
@@ -69,13 +74,13 @@
 
         <tr>
             
-                <td class="name"><code>reset</code></td>
+                <td class="name"><code>fetchData</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="module-kmom03_reset.html">module:kmom03/reset</a></span>
+<span class="param-type"><a href="module-kmom05_fetchData.html">module:kmom05/fetchData</a></span>
 
 
             
@@ -85,7 +90,53 @@
 
             
 
-            <td class="description last">Sätter tillbaka ordning och reda.</td>
+            <td class="description last">Hämtar data från APIn.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>updateData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-kmom05_updateData.html">module:kmom05/updateData</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Updaterar data i tabeler.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>highscore</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-kmom05_highscore.html">module:kmom05/highscore</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Uppdaterar data sessionStorage.</td>
         </tr>
 
     

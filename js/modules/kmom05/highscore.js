@@ -84,6 +84,7 @@ function updateHighscore (data) {
 }
 
 /**
+ *
  * Funktion som rengör highscore från sessionStorage.
  */
 function clearHighscore () {
